@@ -16,11 +16,12 @@
         color: white;
         box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.4); /* Adds a shadow effect */
         border: none; /* Removes the default button border */
-        padding: 10px 20px; /* Adds padding inside the button */
+        padding: 15px 30px; /* Adds padding inside the button */
         border-radius: 0px; /* Rounds the corners of the button */
         cursor: pointer; /* Changes the cursor to a pointer on hover */
         font-family: 'League Spartan', sans-serif; /* Sets the font to League Spartan */
         transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the shadow */
+        font-size: 18px; /* Changes font size */
     }
     .button:hover {
         background-color: #444; /* Darker gray color */
@@ -32,12 +33,11 @@
     }
 </style>
 </head>
-    <title>
-        <div class="container">
+
+<body>
+    <div class="container">
     <button class="button" id="beginFlexureAnalysis">Begin Flexure Analysis</button>
     </div>
-    </title>
-<body>
 <script>
     // JavaScript code
     document.getElementById("beginFlexureAnalysis").onclick = function() {
