@@ -9,7 +9,7 @@
     </style>
 </head>
 <body>
-    <button type="button" onclick="beginFlexureAnalysis()">Begin Flexure Analysis</button>
+    <button type="button" onclick="beginFlexureAnalysis()" id="beginButton">Begin Flexure Analysis</button>
 
     <div id="exercises" style="display:none;">
         <h2>Page 3: Instructions</h2>
@@ -17,10 +17,15 @@
             <!-- Instructions will be dynamically added here -->
         </div>
     </div>
- 
+
     <script>
+        var buttonClicked = false;
+
         function beginFlexureAnalysis() {
-            var randomDegrees = Math.floor(Math.random() * 181); // Generate random number between 0 and 180
+            if (buttonClicked) return; // If button has already been clicked, return
+            buttonClicked = true; // Set buttonClicked to true to prevent further clicks
+
+            var randomDegrees = Math.floor(Math.random() * 121); // Generate random number between 0 and 120
             document.getElementById("exercises").style.display = "block";
             document.getElementById("exercises").innerHTML = "<h3>Your angle is " + randomDegrees + " degrees:</h3>";
             var exerciseList = "";
@@ -88,7 +93,7 @@
                         </li>
                     </ol>
                 `;
-            } else if (randomDegrees > 90 && randomDegrees <= 110) {
+            } else if (randomDegrees > 90 && randomDegrees <= 120) {
                 exerciseList = `
                     <ol>
                         <li><strong>Leg press machine:</strong>
@@ -121,7 +126,7 @@
             }
             
             document.getElementById("exerciseInstructions").innerHTML = exerciseList;
-            document.querySelector('button').style.display = 'none'; // Hide the button after it's clicked
+            document.getElementById('beginButton').style.display = 'none'; // Hide the button after it's clicked
         }
     </script>
 </body>

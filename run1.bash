@@ -11,8 +11,8 @@ echo "Running"
 pushd front_end
 
 # Open index.html in default web browser
-open index2.html  # For macOS
-start index2.html # For Windows
+open index3.html  # For macOS
+start index3.html # For Windows
 
 popd
 

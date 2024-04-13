@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexure Analysis</title>
+<style>
+    /* CSS styles */
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <button class="button" id="beginFlexureAnalysis">Begin Flexure Analysis</button>
+</div>
+
+<script>
+    // JavaScript code
+    document.getElementById("beginFlexureAnalysis").onclick = function() {
+        // Generate random number between 0 and 120
+        var randomNumber = Math.floor(Math.random() * 121);
+
+        // Hide the button
+        document.getElementById("beginFlexureAnalysis").style.display = "none";
+
+        // Output the random number and corresponding exercise
+        var exercise;
+        if (randomNumber >= 0 && randomNumber <= 59) {
+            exercise = "Heel slides";
+        } else if (randomNumber >= 60 && randomNumber <= 90) {
+            exercise = "Prone hangs";
+        } else {
+            exercise = "Leg press machine";
+        }
+        // Display the exercise
+        document.body.innerHTML += "<div>Your angle is " + randomNumber + ".<br>1. **" + exercise + "**</div>";
+    };
+</script>
+</body>
+</html>
