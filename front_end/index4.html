@@ -114,7 +114,7 @@
 
         }
         // Display the exercise
-        exerciseDiv.innerHTML = "<div><strong>Your angle is " + randomNumber + ".</strong><br><br>1. **" + exercise + "**:<br>" + instructions + "<br><br>2. **" + exercise2 + "**:<br>" + instructions2 + "<br><br>3. **" + exercise3 + "**:<br>" + instructions3 + "</div>";
+        exerciseDiv.innerHTML = "<div><span style='font-size: 30px;'><strong>Your angle is " + randomNumber + ".</strong></span><span style='font-size: 26px;'><br><br><strong> 1." + exercise + ":</strong><br>" + instructions + "<br><br><strong> 2." + exercise2 + "</strong>:<br>" + instructions2 + "<br><br><strong>3. " + exercise3 + "<strong>:<br>" + instructions3 + "</span></div>";
 
         // Append the new exercise div to the container div
         document.querySelector(".container").appendChild(exerciseDiv);
