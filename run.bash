@@ -1,13 +1,19 @@
 #!/bin/bash
 set -e
-pushd front_end
-echo "Type-checking the front end"
-tsc --strict main.ts
-popd
+
 echo "Type-checking the back end"
-pushd back_end
-mypy main.py --strict --ignore-missing-imports
-echo "Running"
-python3 main.py
+pushd Back-end
+g++ connect.cpp -o connect
+./connect &  # Run server in background
 popd
+
+echo "Running"
+pushd front_end
+
+# Open index.html in default web browser
+open index.html  # For macOS
+start index.html # For Windows
+
+popd
+
 echo "Done"

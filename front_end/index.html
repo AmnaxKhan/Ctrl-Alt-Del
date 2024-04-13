@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Decision</title>
+    <style>
+        /* Optional: Add some CSS to style the button */
+        #startButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <button id="startButton">Start Now</button>
+
+    <script src="main.js" defer></script>
+    <script>
+        // JavaScript code to handle button click and update content
+        document.getElementById("startButton").addEventListener("click", function() {
+            // Update content with exercise message
+            let output = "do this exercise!";
+            document.getElementById("output").innerText = output;
+        });
+    </script>
+</body>
+</html>
