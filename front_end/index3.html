@@ -108,6 +108,7 @@
         }
         // Display the exercise
         document.body.innerHTML += "<div>Your angle is " + randomNumber + ".<br>1. **" + exercise + "**:<br>" + instructions + "<br>2. **" + exercise2 + "**:<br>" + instructions2 + "<br>3. **" + exercise3 + "**:<br>" + instructions3 + "</div>";
+        document.body.insertAdjacentHTML('beforeend', exerciseHtml);
     };
 </script>
 </body>
