@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexure Analysis</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap">
+<style>
+    /* CSS styles */
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .button {
+        background-color: black;
+        color: white;
+        box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.4); /* Adds a shadow effect */
+        border: none; /* Removes the default button border */
+        padding: 10px 20px; /* Adds padding inside the button */
+        border-radius: 0px; /* Rounds the corners of the button */
+        cursor: pointer; /* Changes the cursor to a pointer on hover */
+        font-family: 'League Spartan', sans-serif; /* Sets the font to League Spartan */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the shadow */
+    }
+    .button:hover {
+        background-color: #444; /* Darker gray color */
+        box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.2); /* Lighter shadow on hover */
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <button class="button" id="beginFlexureAnalysis">Begin Flexure Analysis</button>
+    <div id="exerciseContainer" style="display: none;"></div>
+</div>
+
+<script>
+    // JavaScript code
+    document.getElementById("beginFlexureAnalysis").onclick = function() {
+        // Generate random number between 0 and 120
+        var randomNumber = Math.floor(Math.random() * 111);
+
+        // Hide the button
+        document.getElementById("beginFlexureAnalysis").style.display = "none";
+
+        // Show the exercise container
+        document.getElementById("exerciseContainer").style.display = "block";
+
+        // Output the random number and corresponding exercise
+        var exerciseContainer = document.getElementById("exerciseContainer");
+        var exercise;
+        if (randomNumber >= 0 && randomNumber <= 59) {
+            exercise = "Heel slides";
+            instructions = "- Lie flat on your back on a comfortable surface, like a bed or mat.<br>" +
+                          "- Slowly bend your operated knee by sliding your heel towards your buttocks. Use your hands to gently support your thigh if needed.<br>" +
+                          "- Hold the bent position for a few seconds, then slowly return your leg to the starting position.<br>" +
+                          "- Repeat this movement 10-15 times, ensuring smooth and controlled motions.";
+        } else if (randomNumber >= 60 && randomNumber <= 90) {
+            exercise = "Prone hangs";
+            instructions = "- Lie face down on a sturdy surface, such as a bed or table, with your legs hanging off the edge.<br>" +
+                            "- Allow gravity to gently bend your knees, letting them hang down towards the floor.<br>" +
+                            "- Hold this position for 30-60 seconds, focusing on relaxing your thigh muscles and allowing the stretch to deepen gradually.<br>" +
+                            "- Repeat 2-3 times, as tolerated.";
+        } else {
+            exercise = "Leg press machine";
+            instructions = "- Adjust the seat and weight on the leg press machine according to your comfort and strength level.<br>" +
+                            "- Place your feet shoulder-width apart on the footplate, ensuring your knees are aligned with your toes.<br>" +
+                            "- Slowly bend your knees, lowering the weight until your knees are at a 90-degree angle.<br>" +
+                            "- Push through your heels to straighten your legs, returning to the starting position.<br>" +
+                            "- Perform 10-12 repetitions, focusing on controlled movements and proper form.";
+        }
+        // Display the exercise
+        exerciseContainer.innerHTML = "<div>Your angle is " + randomNumber + ".<br>1. **" + exercise + "**:<br>" + instructions + "</div>";
+    };
+</script>
+</body>
+</html>
