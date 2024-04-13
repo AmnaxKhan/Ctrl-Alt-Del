@@ -12,11 +12,11 @@
             box-sizing: border-box;
             text-align: center;
         }
-        #welcomeSection {
+        #welcomeSection, #instructionsSection, #exerciseSection {
             padding: 20px;
             background-color: #f0f0f0;
         }
-        #startButton, #beginAnalysisButton {
+        #startButton, #beginAnalysisButton, #beginExercisesButton {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -65,22 +65,69 @@
         <button id="beginAnalysisButton">Begin Flexure Analysis</button>
     </div>
 
-    <!-- Script to handle button clicks and show/hide sections -->
-    <script>
-        document.getElementById("startButton").addEventListener("click", function() {
-            document.getElementById("welcomeSection").style.display = "none";
-            document.getElementById("instructionsSection").style.display = "block";
-        });
+    <!-- Page 3: Exercise Recommendations -->
+<div id="exerciseSection" style="display: none;">
+    <h2>Exercise Recommendations</h2>
+    <div id="exerciseContent"></div>
+    <button id="beginExercisesButton">Start Exercises</button>
+</div>
 
-        document.getElementById("beginAnalysisButton").addEventListener("click", function() {
-            // You can add code here to initiate the flexure analysis
-            alert("Flexure analysis initiated!");
-        });
+<!-- Script to handle button clicks and show/hide sections -->
+<script>
+    document.getElementById("startButton").addEventListener("click", function() {
+        document.getElementById("welcomeSection").style.display = "none";
+        document.getElementById("instructionsSection").style.display = "block";
+    });
 
-        // Add code to send a request to the server when the page is unloaded
-        window.addEventListener('unload', () => {
-            fetch('/disconnect');
-        });
-    </script>
+    document.getElementById("beginAnalysisButton").addEventListener("click", function() {
+        document.getElementById("instructionsSection").style.display = "none";
+        document.getElementById("exerciseSection").style.display = "block";
+        // You can add code here to initiate the flexure analysis
+        alert("Flexure analysis initiated!");
+
+        // Get angle from the JavaScript file
+        let angle = document.getElementById("angleValue").innerText;
+
+        // Map angle to exercise recommendations
+        let recommendations;
+        if (angle <= 60) {
+            recommendations = [
+                "Heel slides",
+                "Quad sets",
+                "Straight leg raises"
+            ];
+        } else if (angle <= 90) {
+            recommendations = [
+                "Prone hangs",
+                "Seated knee flexion",
+                "Mini-squats"
+            ];
+        } else {
+            recommendations = [
+                "Leg press machine",
+                "Step-ups",
+                "Lunges",
+                "Cycling"
+            ];
+        }
+
+        // Display exercise recommendations
+        let exerciseContent = document.getElementById("exerciseContent");
+        exerciseContent.innerHTML = "<h3>Exercise Recommendations for " + angle + " degrees:</h3>";
+        for (let i = 0; i < recommendations.length; i++) {
+            exerciseContent.innerHTML += "<p>" + recommendations[i] + "</p>";
+        }
+    });
+
+    document.getElementById("beginExercisesButton").addEventListener("click", function() {
+        // You can add code here to start the recommended exercises
+        alert("Exercises started!");
+    });
+
+    // Add code to send a request to the server when the page is unloaded
+    window.addEventListener('unload', () => {
+        fetch('/disconnect');
+    });
+</script>
 </body>
 </html>
