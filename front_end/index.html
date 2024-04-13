@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise Decision</title>
+    <title>Welcome to EmpowerMotion</title>
     <style>
-        /* Optional: Add some CSS to style the button */
-        #startButton {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #welcomeSection {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        #startButton, #beginAnalysisButton {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -14,16 +24,41 @@
     </style>
 </head>
 <body>
-    <div id="output"></div>
-    <button id="startButton">Start Now</button>
+    <!-- Page 1: Welcome message and our mission statement -->
+    <div id="welcomeSection">
+        <h1>Welcome to EmpowerMotion</h1>
+        <p>Your at-home physical therapy partner!</p>
+        <p>Our goal is to empower individuals with limited mobility by offering personalized exercise and recovery plans designed to enhance movement.</p>
+        <p>Whether you're recuperating from surgery or managing a chronic condition, we're here to provide tailored guidance to help you regain mobility and independence. With our support, you can embark on a journey toward improved physical well-being from the comfort of your own home.</p>
+        <button id="startButton">LET US GET STARTED!</button>
+    </div>
 
-    <script src="main.js" defer></script>
+    <!-- Page 2: Instructions -->
+    <div id="instructionsSection" style="display: none;">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Please take a seat in a comfortable position.</li>
+            <li>Securely fasten the EmpowerMotion band around the center of your knee.</li>
+            <li>Refer to the image below and try to flex your knee to the best of your ability.</li>
+        </ol>
+        <button id="beginAnalysisButton">Begin Flexure Analysis</button>
+    </div>
+
+    <!-- Script to handle button clicks and show/hide sections -->
     <script>
-        // JavaScript code to handle button click and update content
         document.getElementById("startButton").addEventListener("click", function() {
-            // Update content with exercise message
-            let output = "do this exercise!";
-            document.getElementById("output").innerText = output;
+            document.getElementById("welcomeSection").style.display = "none";
+            document.getElementById("instructionsSection").style.display = "block";
+        });
+
+        document.getElementById("beginAnalysisButton").addEventListener("click", function() {
+            // You can add code here to initiate the flexure analysis
+            alert("Flexure analysis initiated!");
+        });
+
+        // Add code to send a request to the server when the page is unloaded
+        window.addEventListener('unload', () => {
+            fetch('/disconnect');
         });
     </script>
 </body>
