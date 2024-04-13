@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3: Instructions</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <button type="button" onclick="beginFlexureAnalysis()">Begin Flexure Analysis</button>
+
+    <div id="exercises" style="display:none;">
+        <h2>Page 3: Instructions</h2>
+        <div id="exerciseInstructions">
+            <!-- Instructions will be dynamically added here -->
+        </div>
+    </div>
+ 
+    <script>
+        function beginFlexureAnalysis() {
+            var randomDegrees = Math.floor(Math.random() * 181); // Generate random number between 0 and 180
+            document.getElementById("exercises").style.display = "block";
+            document.getElementById("exercises").innerHTML = "<h3>Your angle is " + randomDegrees + " degrees:</h3>";
+            var exerciseList = "";
+            
+            if (randomDegrees >= 0 && randomDegrees <= 60) {
+                exerciseList = `
+                    <ol>
+                        <li><strong>Heel slides:</strong>
+                            <ul>
+                                <li>Lie flat on your back on a comfortable surface, like a bed or mat.</li>
+                                <li>Slowly bend your operated knee by sliding your heel towards your buttocks. Use your hands to gently support your thigh if needed.</li>
+                                <li>Hold the bent position for a few seconds, then slowly return your leg to the starting position.</li>
+                                <li>Repeat this movement 10-15 times, ensuring smooth and controlled motions.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Quad sets:</strong>
+                            <ul>
+                                <li>Sit comfortably in a chair with your back supported.</li>
+                                <li>Straighten your operated leg out in front of you, keeping your heel on the ground.</li>
+                                <li>Tighten the muscles on the front of your thigh (quadriceps) by pressing the back of your knee down into the floor.</li>
+                                <li>Hold this contraction for 5-10 seconds, then relax.</li>
+                                <li>Repeat 10-15 times, gradually increasing the duration of the contraction as you gain strength.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Straight leg raises:</strong>
+                            <ul>
+                                <li>- Lie on your back with both legs straight out in front of you.</li>
+                                <li>- Engage your core muscles to stabilize your spine.</li>
+                                <li>- Lift your operated leg slowly off the ground, keeping it straight, until it reaches the height of your other knee.</li>
+                                <li>- Hold for a few seconds, then slowly lower your leg back down.</li>
+                                <li>- Start with 5-10 repetitions and gradually increase as you become stronger.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                `;
+            } else if (randomDegrees > 60 && randomDegrees <= 90) {
+                exerciseList = `
+                    <ol>
+                        <li><strong>Prone hangs:</strong>
+                            <ul>
+                                <li>Lie face down on a sturdy surface, such as a bed or table, with your legs hanging off the edge.</li>
+                                <li>Allow gravity to gently bend your knees, letting them hang down towards the floor.</li>
+                                <li>Hold this position for 30-60 seconds, focusing on relaxing your thigh muscles and allowing the stretch to deepen gradually.</li>
+                                <li>Repeat 2-3 times, as tolerated.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Seated knee flexion:</strong>
+                            <ul>
+                                <li>- Sit on a chair with your back straight and feet flat on the ground.</li>
+                                <li>- Place your operated foot on another chair or stool in front of you, ensuring it's at a comfortable distance.</li>
+                                <li>- Lean forward slightly from your hips, bending your knee as far as possible while keeping your back straight.</li>
+                                <li>- Hold this position for 10-15 seconds, then slowly return to the starting position.</li>
+                                <li>- Repeat 5-10 times, aiming to increase the depth of the stretch with each repetition.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mini-squats:</strong>
+                            <ul>
+                                <!-- Add mini-squats instructions here -->
+                            </ul>
+                        </li>
+                        <li><strong>Stationary bike:</strong>
+                            <ul>
+                                <!-- Add stationary bike instructions here -->
+                            </ul>
+                        </li>
+                    </ol>
+                `;
+            } else if (randomDegrees > 90 && randomDegrees <= 110) {
+                exerciseList = `
+                    <ol>
+                        <li><strong>Leg press machine:</strong>
+                            <ul>
+                                <!-- Add leg press machine instructions here -->
+                            </ul>
+                        </li>
+                        <li><strong>Step-ups:</strong>
+                            <ul>
+                                <!-- Add step-ups instructions here -->
+                            </ul>
+                        </li>
+                        <li><strong>Lunges:</strong>
+                            <ul>
+                                <!-- Add lunges instructions here -->
+                            </ul>
+                        </li>
+                        <li><strong>Cycling:</strong>
+                            <ul>
+                                <!-- Add cycling instructions here -->
+                            </ul>
+                        </li>
+                        <li><strong>Pool exercises:</strong>
+                            <ul>
+                                <!-- Add pool exercises instructions here -->
+                            </ul>
+                        </li>
+                    </ol>
+                `;
+            }
+            
+            document.getElementById("exerciseInstructions").innerHTML = exerciseList;
+            document.querySelector('button').style.display = 'none'; // Hide the button after it's clicked
+        }
+    </script>
+</body>
+</html>
