@@ -16,12 +16,11 @@
         color: white;
         box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.4); /* Adds a shadow effect */
         border: none; /* Removes the default button border */
-        padding: 15px 30px; /* Adds padding inside the button */
+        padding: 10px 20px; /* Adds padding inside the button */
         border-radius: 0px; /* Rounds the corners of the button */
         cursor: pointer; /* Changes the cursor to a pointer on hover */
         font-family: 'League Spartan', sans-serif; /* Sets the font to League Spartan */
         transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the shadow */
-        font-size: 18px; /* Changes font size */
     }
     .button:hover {
         background-color: #444; /* Darker gray color */
@@ -33,11 +32,11 @@
     }
 </style>
 </head>
-
 <body>
-    <div class="container">
+<div class="container">
     <button class="button" id="beginFlexureAnalysis">Begin Flexure Analysis</button>
-    </div>
+</div>
+
 <script>
     // JavaScript code
     document.getElementById("beginFlexureAnalysis").onclick = function() {
@@ -109,7 +108,7 @@
                             "- Aim to lower yourself until your back knee nearly touches the ground, keeping your front knee aligned with your ankle.<br>" +
                             "- Push through your front heel to return to the starting position, engaging your thigh and glute muscles.<br>" +
                             "- Perform 8-10 lunges on each leg, alternating sides with each repetition.";
-        
+
         }
         // Display the exercise
         exerciseDiv.innerHTML = "<div>Your angle is " + randomNumber + ".<br>1. **" + exercise + "**:<br>" + instructions + "<br>2. **" + exercise2 + "**:<br>" + instructions2 + "<br>3. **" + exercise3 + "**:<br>" + instructions3 + "</div>";
