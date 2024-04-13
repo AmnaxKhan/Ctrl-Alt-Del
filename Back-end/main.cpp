@@ -1,5 +1,4 @@
 #include <Arduino.h>
-
 const int FLEX_PIN = A0; // Pin connected to voltage divider output
 
 // Measure the voltage at 5V and the actual resistance of your
@@ -23,11 +22,11 @@ void loop() {
     int flexADC = analogRead(FLEX_PIN);
     float flexV = flexADC * VCC / 1023.0;
     float flexR = R_DIV * (VCC / flexV - 1.0);
-    Serial.println("Resistance: " + String(flexR) + " ohms");
+    //Serial.println("Resistance: " + String(flexR) + " ohms");
 
     // Print ADC value and voltage for debugging
-    Serial.println("ADC Value: " + String(flexADC));
-    Serial.println("Voltage: " + String(flexV));
+    //Serial.println("ADC Value: " + String(flexADC));
+    //Serial.println("Voltage: " + String(flexV));
 
     // Use the calculated resistance to estimate the sensor's
     // bend angle:
