@@ -38,13 +38,26 @@
         var exercise;
         if (randomNumber >= 0 && randomNumber <= 59) {
             exercise = "Heel slides";
+            instructions = "- Lie flat on your back on a comfortable surface, like a bed or mat.<br>" +
+                          "- Slowly bend your operated knee by sliding your heel towards your buttocks. Use your hands to gently support your thigh if needed.<br>" +
+                          "- Hold the bent position for a few seconds, then slowly return your leg to the starting position.<br>" +
+                          "- Repeat this movement 10-15 times, ensuring smooth and controlled motions.";
+       
         } else if (randomNumber >= 60 && randomNumber <= 90) {
             exercise = "Prone hangs";
+            instructions = "- Lie flat on your back on a comfortable surface, like a bed or mat.<br>" +
+                          "- Slowly bend your operated knee by sliding your heel towards your buttocks. Use your hands to gently support your thigh if needed.<br>" +
+                          "- Hold the bent position for a few seconds, then slowly return your leg to the starting position.<br>" +
+                          "- Repeat this movement 10-15 times, ensuring smooth and controlled motions.";
         } else {
             exercise = "Leg press machine";
+            instructions = "- Lie flat on your back on a comfortable surface, like a bed or mat.<br>" +
+                          "- Slowly bend your operated knee by sliding your heel towards your buttocks. Use your hands to gently support your thigh if needed.<br>" +
+                          "- Hold the bent position for a few seconds, then slowly return your leg to the starting position.<br>" +
+                          "- Repeat this movement 10-15 times, ensuring smooth and controlled motions.";
         }
         // Display the exercise
-        document.body.innerHTML += "<div>Your angle is " + randomNumber + ".<br>1. **" + exercise + "**</div>";
+        document.body.innerHTML += "<div>Your angle is " + randomNumber + ".<br>1. " + exercise + ":<br>" + instructions + "</div>";
     };
 </script>
 </body>
