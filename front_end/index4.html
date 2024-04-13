@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexure Analysis</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap">
+<style>
+    /* CSS styles */
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .button {
+        background-color: black;
+        color: white;
+        box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.4); /* Adds a shadow effect */
+        border: none; /* Removes the default button border */
+        padding: 10px 20px; /* Adds padding inside the button */
+        border-radius: 0px; /* Rounds the corners of the button */
+        cursor: pointer; /* Changes the cursor to a pointer on hover */
+        font-family: 'League Spartan', sans-serif; /* Sets the font to League Spartan */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for the shadow */
+    }
+    .button:hover {
+        background-color: #444; /* Darker gray color */
+        box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.2); /* Lighter shadow on hover */
+    }
+
+    .exercise {
+        font-family: 'League Spartan', sans-serif; /* Sets the font to League Spartan for exercises */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <button class="button" id="beginFlexureAnalysis">Begin Flexure Analysis</button>
+</div>
+
+<script>
+    // JavaScript code
+    document.getElementById("beginFlexureAnalysis").onclick = function() {
+        // Generate random number between 0 and 120
+        var randomNumber = Math.floor(Math.random() * 111);
+
+        // Hide the button
+        document.getElementById("beginFlexureAnalysis").style.display = "none";
+
+        // Create a new div element to hold the exercise instructions
+        var exerciseDiv = document.createElement("div");
+
+        // Output the random number and corresponding exercise
+        var exercise;
+        if (randomNumber >= 0 && randomNumber <= 59) {
+            exercise = "Heel slides";
+            instructions = "- Lie flat on your back on a comfortable surface, like a bed or mat.<br>" +
+                          "- Slowly bend your operated knee by sliding your heel towards your buttocks. Use your hands to gently support your thigh if needed.<br>" +
+                          "- Hold the bent position for a few seconds, then slowly return your leg to the starting position.<br>" +
+                          "- Repeat this movement 10-15 times, ensuring smooth and controlled motions.";
+            exercise2 = "Quad sets";
+            instructions2 = "- Sit comfortably in a chair with your back supported.<br>" +
+                          "- Straighten your operated leg out in front of you, keeping your heel on the ground.<br>" +
+                          "- Tighten the muscles on the front of your thigh (quadriceps) by pressing the back of your knee down into the floor.<br>" +
+                          "- Hold this contraction for 5-10 seconds, then relax.<br>" +
+                          "- Repeat 10-15 times, gradually increasing the duration of the contraction as you gain strength.";
+            exercise3 = "Straight leg raises";
+            instructions3 = "- Lie on your back with both legs straight out in front of you.<br>" +
+                          "- Engage your core muscles to stabilize your spine.<br>" +
+                          "- Lift your operated leg slowly off the ground, keeping it straight, until it reaches the height of your other knee.<br>" +
+                          "- Hold for a few seconds, then slowly lower your leg back down.<br>" +
+                          "- Start with 5-10 repetitions and gradually increase as you become stronger.";
+        } else if (randomNumber >= 60 && randomNumber <= 90) {
+            exercise = "Prone hangs";
+            instructions = "- Lie face down on a sturdy surface, such as a bed or table, with your legs hanging off the edge.<br>" +
+                            "- Allow gravity to gently bend your knees, letting them hang down towards the floor.<br>" +
+                            "- Hold this position for 30-60 seconds, focusing on relaxing your thigh muscles and allowing the stretch to deepen gradually.<br>" +
+                            "- Repeat 2-3 times, as tolerated.";
+            exercise2 = "Seated knee flexion";
+            instructions2 = "- Sit on a chair with your back straight and feet flat on the ground.<br>" +
+                          "- Place your operated foot on another chair or stool in front of you, ensuring it's at a comfortable distance.<br>" +
+                          "- Lean forward slightly from your hips, bending your knee as far as possible while keeping your back straight.<br>" +
+                          "- Hold this position for 10-15 seconds, then slowly return to the starting position.<br>" +
+                          "- Repeat 5-10 times, aiming to increase the depth of the stretch with each repetition.<br>";
+                          "- Repeat 5-10 times, aiming to increase the depth of the stretch with each repetition.<br>";
+            exercise3 = "Mini-squats";
+            instructions3 = "- Stand with your feet shoulder-width apart, holding onto a sturdy surface for support if needed.<br>" +
+                            "- Slowly bend your knees, lowering your body down as if you were sitting in a chair.<br>" +
+                            "- Keep your back straight and chest lifted throughout the movement, and focus on lowering yourself with control.<br>" +
+                            "- Only go down as far as comfortable, aiming for a knee bend of 60-90 degrees.<br>" +
+                            "- Rise back up to the starting position, squeezing your glutes as you stand.<br>" +
+                            "- Perform 10-15 repetitions, taking breaks as needed.";
+        } else {
+            exercise = "Leg press machine";
+            instructions = "- Adjust the seat and weight on the leg press machine according to your comfort and strength level.<br>" +
+                            "- Place your feet shoulder-width apart on the footplate, ensuring your knees are aligned with your toes.<br>" +
+                            "- Slowly bend your knees, lowering the weight until your knees are at a 90-degree angle.<br>" +
+                            "- Push through your heels to straighten your legs, returning to the starting position.<br>" +
+                            "- Perform 10-12 repetitions, focusing on controlled movements and proper form.";
+            exercise2 = "Step-ups";
+            instructions2 = "- Stand in front of a step or platform with your feet hip-width apart.<br>" +
+                            "- Step up onto the platform with your operated leg, ensuring your entire foot is firmly planted.<br>" +
+                            "- Shift your weight onto the operated leg as you straighten it, bringing your other foot up to meet the first.<br>" +
+                            "- Step back down with control, leading with your operated leg.<br>" +
+                            "- Perform 8-10 step-ups on each leg, alternating sides with each repetition.";
+            exercise3 = "Lunges";
+            instructions3 = "- Stand with your feet hip-width apart, holding onto a stable surface for support if needed.<br>" +
+                            "- Take a step forward with your operated leg, bending both knees to lower your body towards the ground.<br>" +
+                            "- Aim to lower yourself until your back knee nearly touches the ground, keeping your front knee aligned with your ankle.<br>" +
+                            "- Push through your front heel to return to the starting position, engaging your thigh and glute muscles.<br>" +
+                            "- Perform 8-10 lunges on each leg, alternating sides with each repetition.";
+        
+        }
+        // Display the exercise
+        exerciseDiv.innerHTML = "<div>Your angle is " + randomNumber + ".<br>1. **" + exercise + "**:<br>" + instructions + "<br>2. **" + exercise2 + "**:<br>" + instructions2 + "<br>3. **" + exercise3 + "**:<br>" + instructions3 + "</div>";
+
+        // Append the new exercise div to the container div
+        document.querySelector(".container").appendChild(exerciseDiv);
+    };
+</script>
+</body>
+</html>
