@@ -1,7 +1,8 @@
 # EmpowerMotion Exercise Program
 
 Welcome to the EmpowerMotion Exercise Program! This program provides personalized exercise plans to enhance movement and mobility from the comfort of your own home.
-Link to our website: empowermotion.co
+
+[empowermotion.co](https://empowermotion.co)
 
 ## Getting Started
 
